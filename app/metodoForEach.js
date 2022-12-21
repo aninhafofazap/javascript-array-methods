@@ -1,9 +1,14 @@
+// const elementoParaInserirLivros = document.getElementById('livros');
+const elementoComValorTotalDeLivrosDisponiveisNaTela = document.getElementById('valor_total_livros_disponiveis')
+
+
 function exibirLivrosNaTela(listaDeLivros) {
-    elementoParaInserirLivros.innerHTML = ''
-    listaDeLivros.forEach(livro => {
-        // let disponibilidade = verificarDisponbilidadeDoLivro(livro)
-        let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel'
-        elementoParaInserirLivros.innerHTML += `
+  elementoComValorTotalDeLivrosDisponiveisNaTela.innerHTML = ''
+  elementoParaInserirLivros.innerHTML = ''
+  listaDeLivros.forEach(livro => {
+    // let disponibilidade = verificarDisponbilidadeDoLivro(livro)
+    let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livro__imagens indisponivel'
+    elementoParaInserirLivros.innerHTML += `
       <div class="livro">
       <img class="${disponibilidade}" src="${livro.imagem}" alt="${livro.alt}" />
       <h2 class="livro__titulo">${livro.titulo}</h2>
@@ -14,10 +19,10 @@ function exibirLivrosNaTela(listaDeLivros) {
       </div>
     </div>
 `
-    })
+  })
 }
 
-// Função mais explicativa sem o valor ternário
+
 // function verificarDisponbilidadeDoLivro(livro) {
 //     if (livro.quantidade > 0) {
 //         return 'livro__imagens'
